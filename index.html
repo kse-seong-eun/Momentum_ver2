@@ -7,9 +7,17 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="login-form"></div>
-    <input type="text" placeholder="What is your name?" />
-    <button>Log In</button>
+    <form id="login-form">
+      <input
+        id="login-input"
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <input id="login-button" type="submit" value="Login😚"></input>
+    </form>
+    <div id="greeting"></div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
