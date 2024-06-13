@@ -1,21 +1,5 @@
 @import "./css-reset.scss";
 
-input {
-  // &:-webkit-autofill {
-  //   -webkit-box-shadow: 0 0 0 1000px white inset;
-  //   box-shadow: 0 0 0 1000px white inset;
-  // }
-  // &::-webkit-search-decoration,
-  // &::-webkit-search-cancel-button,
-  // &::-webkit-search-results-button,
-  // &::-webkit-search-results-decoration {
-  //   display: none;
-  //   -webkit-appearance: none;
-  //   -moz-appearance: none;
-  //   appearance: none;
-  // }
-}
-
 body {
   display: flex;
   height: 100vh;
@@ -23,7 +7,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: rgb(223, 223, 105);
+  background-color: rgb(55, 55, 55);
+  color: rgb(255, 255, 255);
   .hidden {
     display: none;
   }
@@ -34,7 +19,6 @@ body {
     height: 10%;
     width: 70vw;
     font-size: 40px;
-    // background-color: red;
     display: flex;
     justify-content: space-around;
     box-sizing: border-box;
@@ -45,34 +29,41 @@ body {
       padding: 0px 20px;
       margin: 10px;
       border: 2px solid transparent;
-      background-color: rgb(223, 223, 105);
-      &:focus {
-        background-color: rgb(199, 199, 90);
-        border: 2px solid transparent;
-      }
     }
     input:last-child {
       width: 20%;
       margin: 10px;
-      border-radius: 30px;
       padding: 10px;
       border: 2px solid #ffffff00;
-      background-color: #ffffff;
-      &:hover {
-        background-color: rgb(199, 199, 90);
-      }
+      border-radius: 30px;
+      color: rgb(255, 255, 255);
+      background-color: #93754d;
     }
+  }
+  #clock {
+    line-height: 1.3;
   }
   #greeting {
     font-size: 40px;
-    height: 10%;
   }
   #quotes {
     width: 60vw;
-    height: 70px;
+    height: 55px;
+    padding: 45px 40px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    font-weight: 100;
+    line-height: 1.5;
+    span:last-child {
+      padding-top: 20px;
+    }
+  }
+  img {
+    position: fixed;
+    z-index: -1;
+    width: 100vw;
   }
 }
