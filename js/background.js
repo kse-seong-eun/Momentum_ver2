@@ -20,3 +20,4 @@ BackGround.src = `img/${RandomImg}`;
 console.log(BackGround);
 
 document.body.appendChild(BackGround);
+

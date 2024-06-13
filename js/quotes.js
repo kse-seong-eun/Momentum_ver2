@@ -1,13 +1,3 @@
-`================= 오늘 배운거 ====================`;
-//
-Math.random();
-// 반올림
-Math.round();
-// 올림
-Math.ceil();
-// 내림 ****
-Math.floor();
-`================================================`;
 
 const Quotes = document.querySelector("#quotes span:first-child");
 const Author = document.querySelector("#quotes span:last-child");

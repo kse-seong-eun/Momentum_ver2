@@ -2,14 +2,14 @@ import "../style/style.scss";
 
 const LoginForm = document.querySelector("#login-form");
 const LoginInput = document.querySelector("#login-form input");
-const LoginButton = document.querySelector("#login-form button");
+// const LoginButton = document.querySelector("#login-form button");
 const greeting = document.querySelector("#greeting");
 
 // string만 포함된 변수는 대문자로 쓴다.(중요한 변수가 아님)
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
-function onLoginLoginSubmit(event) {
+function onLoginSubmit(event) {
   event.preventDefault();
   LoginForm.classList.add(HIDDEN_CLASSNAME);
   const userName = LoginInput.value;
@@ -32,7 +32,7 @@ const savedUserName = localStorage.getItem(USERNAME_KEY);
 if (savedUserName == null) {
   // show the form
   LoginForm.classList.remove(HIDDEN_CLASSNAME);
-  LoginForm.addEventListener("submit", onLoginLoginSubmit);
+  LoginForm.addEventListener("submit", onLoginSubmit);
 } else {
   // show the greeting
   paintGreetings(savedUserName);
