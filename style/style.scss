@@ -15,31 +15,30 @@ body {
   #clock {
     font-size: 100px;
   }
-  // #login-form {
-  //   height: 10%;
-  //   width: 70vw;
-  //   font-size: 40px;
-  //   display: flex;
-  //   justify-content: space-around;
-  //   box-sizing: border-box;
-  //   margin: 0 0 20px 0;
-  //   input:first-child {
-  //     width: 75%;
-  //     border-radius: 30px;
-  //     padding: 0px 20px;
-  //     margin: 10px;
-  //     border: 2px solid transparent;
-  //   }
-  //   input:last-child {
-  //     width: 20%;
-  //     margin: 10px;
-  //     padding: 10px;
-  //     border: 2px solid #ffffff00;
-  //     border-radius: 30px;
-  //     color: rgb(255, 255, 255);
-  //     background-color: #93754d;
-  //   }
-  // }
+  #login-form {
+    height: 10%;
+    width: 70vw;
+    font-size: 40px;
+    justify-content: space-around;
+    box-sizing: border-box;
+    margin: 0 0 20px 0;
+    input:first-child {
+      width: 50%;
+      height: 40px;
+      border-radius: 30px;
+      padding: 0px 20px;
+      border: 2px solid transparent;
+    }
+    input:last-child {
+      width: 20%;
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid #ffffff00;
+      border-radius: 30px;
+      color: rgb(255, 255, 255);
+      background-color: #93754d;
+    }
+  }
   #clock {
     line-height: 1.3;
   }

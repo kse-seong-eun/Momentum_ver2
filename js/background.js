@@ -13,11 +13,8 @@ const RandomImg = imges[Math.floor(Math.random() * imges.length)];
 // console.log(RandomImg);
 
 const BackGround = document.createElement("img");
-console.log(BackGround);
+// console.log(BackGround);
 // Elements탭에서는 보이지 않지만 콘솔로 찍으면 <img>나옴
-
 BackGround.src = `img/${RandomImg}`;
-console.log(BackGround);
 
 document.body.appendChild(BackGround);
-

@@ -1,6 +1,5 @@
 # Momentum_ver.2 (REVIEW)
-![alt text](image.png)
-![alt text](image-2.png)
+
 # localStorage .getItem .setItem
 
 ```js
@@ -102,13 +101,36 @@ const imges = [
 
 const RandomImg = imges[Math.floor(Math.random() * imges.length)];
 // console.log(RandomImg);
+```
 
+# .createElement() .innerText .appendChild() 메소드
+
+- `Document.createElement()` 메서드는 지정한 tagName 의 HTML 요소를 만들어 반환.
+- `innerText`는 'Element'의 속성으로, element 내에서 사용자에게 보이는 text값들을 가져오거나 설정할 수 있다.
+- Node 인터페이스의 메소드입니다. 지정된 부모 노드에서 `appendChild()` 메소드를 사용하면 **부모 노드**가 가지고있는 **자식 노드 목록의 끝에** 매개변수로 전달 받은 **노드를 추가**
+
+```js
 const BackGround = document.createElement("img");
-console.log(BackGround);
 // Elements탭에서는 보이지 않지만 콘솔로 찍으면 <img>나옴
 
 BackGround.src = `img/${RandomImg}`;
-console.log(BackGround);
+// console.log(BackGround);
 
 document.body.appendChild(BackGround);
 ```
+
+![alt text](image-3.png)
+
+```Js
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+
+  li.appendChild(span);
+  span.innerText = "newTodo";
+  console.log(li);
+```
+
+![alt text](image-4.png)
+
+![alt text](image.png)
+![alt text](image-2.png)
