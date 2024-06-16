@@ -2,13 +2,23 @@ const TodoForm = document.getElementById("todo-form");
 const TodoInput = TodoForm.querySelector("input");
 const TodoList = document.getElementById("todo-list");
 
+const TODOS_KEY = "todos📝";
+
+const Todos = [];
+
+function saveToDos() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(Todos));
+}
+
 function onTodoSubmit(event) {
   event.preventDefault();
   const newTodo = TodoInput.value;
   // console.log(newTodo, "😃");
   TodoInput.value = "";
   // console.log(newTodo, TodoInput.value);
+  Todos.push(newTodo);
   paintToDo(newTodo);
+  saveToDos();
 }
 
 function paintToDo(newTodo) {
@@ -27,6 +37,19 @@ function paintToDo(newTodo) {
 
 function deletTodo(event) {
   console.log(event.target.parentElement);
-  // console.dir(event);
+  const removeli = event.target.parentElement;
+  removeli.remove();
 }
+
+function sayHello(list) {
+  console.log("hi", list);
+}
+
 TodoForm.addEventListener("submit", onTodoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  parsedToDos.forEach(sayHello);
+}

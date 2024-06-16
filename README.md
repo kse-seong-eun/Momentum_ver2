@@ -119,7 +119,7 @@ BackGround.src = `img/${RandomImg}`;
 document.body.appendChild(BackGround);
 ```
 
-![alt text](image-3.png)
+![alt text](./img/image-3.png)
 
 ```Js
   const li = document.createElement("li");
@@ -130,7 +130,60 @@ document.body.appendChild(BackGround);
   console.log(li);
 ```
 
-![alt text](image-4.png)
+![alt text](./img/image-4.png)
+![alt text](./img/image-2.png)
 
-![alt text](image.png)
-![alt text](image-2.png)
+# JSON.strigify JSON.parse
+
+localStorage .getItem .setItem 을 저장하는 방식 변화
+- `JSON.stringify()` 메서드는 JavaScript 값이나 객체를 JSON 문자열로 변환. 배열로 전달할 경우 지정한 속성만 결과에 포함합니다
+
+**인풋값을 localStorage에 배열로 저장하기!!**
+![alt text](./img/image6.png)
+
+```js
+const Todos = [];
+
+function saveTodos() {
+  localStorage.setItem("todos📝",Todos);
+}
+...input 입력값을 배열로 push
+function submitTodos(event){
+  ...
+  Todos.push(input.value);
+  saveTodos();
+}
+```
+
+**인풋값을 localStorage에 배열 "문자" 모양으로 저장하기!!**
+![alt text](./img/image5.png)
+```js
+const Todos = [];
+
+function saveTodos() {
+  localStorage.setItem("todos📝", JSON.stringify(Todos));
+}
+...input 입력값을 배열로 push
+function submitTodos(event){
+  ...
+  Todos.push(input.value);
+  saveTodos();
+}
+```
+
+# forEach()
+![alt text](./img/image7.png)
+```js
+function sayHello(list) {
+  console.log("hi", list);
+}
+
+TodoForm.addEventListener("submit", onTodoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  parsedToDos.forEach(sayHello);
+}
+```
