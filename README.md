@@ -174,11 +174,10 @@ function submitTodos(event){
 # forEach()
 ![alt text](./img/image7.png)
 ```js
-function sayHello(list) {
-  console.log("hi", list);
-}
 
-TodoForm.addEventListener("submit", onTodoSubmit);
+function sayHello(item) {
+  console.log("hi", item);
+}
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
@@ -186,4 +185,14 @@ if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   parsedToDos.forEach(sayHello);
 }
+
+==> 짧은 버전의 코드 
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos);
+  console.log(parsedToDos);
+  parsedToDos.forEach((item)=>console.log("hi!",item));
+}
+
 ```

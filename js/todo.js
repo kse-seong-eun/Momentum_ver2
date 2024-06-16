@@ -41,15 +41,12 @@ function deletTodo(event) {
   removeli.remove();
 }
 
-function sayHello(list) {
-  console.log("hi", list);
-}
-
 TodoForm.addEventListener("submit", onTodoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
-  parsedToDos.forEach(sayHello);
+  console.log(parsedToDos);
+  parsedToDos.forEach((item)=>console.log("hi!",item));
 }
