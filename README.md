@@ -38,6 +38,8 @@ setTimeout(sayTimeout, 1000);
 오늘 날짜 new Date()
 const DATE = new Date();
 
+- 1970년 1월 1일 0시 0분 0초부터 현재까지 경과된 밀리초를 반환
+  `DATE.now();`
 - 요일 [0:일]
   `DATE.getDay();`
 - 날짜 [12일]
@@ -134,11 +136,15 @@ document.body.appendChild(BackGround);
 ![alt text](./img/image-2.png)
 
 # JSON.strigify JSON.parse
+[개념 설명 참고](https://www.daleseo.com/js-json/)
 
-localStorage .getItem .setItem 을 저장하는 방식 변화
+- `JSON`은 JavaScript Object Notation의 약자로서 **데이터를 문자열의 형태로 나타내기 위해서 사용**됩니다.
+
 - `JSON.stringify()` 메서드는 JavaScript 값이나 객체를 JSON 문자열로 변환. 배열로 전달할 경우 지정한 속성만 결과에 포함합니다
+- **JSON 문자열을 JavaScript 객체로 변환**할 때는 `JSON 객체의 parse() 메서드`를 사용
 
-**인풋값을 localStorage에 배열로 저장하기!!**
+
+**✅ 인풋값을 localStorage에 배열로 저장해보자!!**
 ![alt text](./img/image6.png)
 
 ```js
@@ -155,7 +161,7 @@ function submitTodos(event){
 }
 ```
 
-**인풋값을 localStorage에 배열 "문자" 모양으로 저장하기!!**
+**stringify()메서드로 입력값을 "문자열" 형태로 저장!**
 ![alt text](./img/image5.png)
 ```js
 const Todos = [];
@@ -170,7 +176,6 @@ function submitTodos(event){
   saveTodos();
 }
 ```
-
 # forEach()
 ![alt text](./img/image7.png)
 ```js
