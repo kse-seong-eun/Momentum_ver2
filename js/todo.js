@@ -26,7 +26,7 @@ function handleTodoSubmit(event) {
 }
 
 function paintToDo(newTodo) {
-  console.log(newTodo);
+  console.log(newTodo, "paint");
   const li = document.createElement("li");
   li.id = newTodo.id;
   const span = document.createElement("span");
@@ -40,9 +40,12 @@ function paintToDo(newTodo) {
 }
 
 function deletTodo(event) {
-  console.log(event.target.parentElement);
+  console.log(event.target.parentElement, "delet");
   const removeli = event.target.parentElement;
   removeli.remove();
+  console.log(typeof removeli.id, "delet typeof");
+  Todos = Todos.filter((Todo) => Todo.id !== parseInt(removeli.id));
+  saveToDos();
 }
 
 TodoForm.addEventListener("submit", handleTodoSubmit);
