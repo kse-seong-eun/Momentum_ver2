@@ -3,7 +3,7 @@
 ### Todo List 페이지
 
 ![Macbook-Air](https://github.com/kse-seong-eun/CSS-Layout-study/assets/66905959/4fe1347f-a41a-4188-ba39-1f13981cdfe1)
-
+###### [미리보기](https://github.com/kse-seong-eun/Momentum_ver2/assets/66905959/fc249e6c-42bb-4edc-afdd-a69814233b5b)
 ---
 
 | 반응형 구현                                                                                                            |                                                                                                                          |
