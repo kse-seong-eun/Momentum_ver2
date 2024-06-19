@@ -16,11 +16,14 @@
         type="text"
         placeholder="What is your name?"
       />
-      <input id="login-button" type="submit" value="Login😚"></input>
+      <span class="login-border"></span>
+      <input id="login-button" type="submit" value="Login"></input>
     </form>
     <div id="greeting" class="hidden"></div>
     <form id="todo-form">
-        <input type="text" required  placeholder="Write your todo list!">
+      <input type="text" required>
+      <label for="">Todo List</label>
+      <span class="underline"></span>
     </form>
     <ul id="todo-list"> </ul>
     <div id="quotes">
@@ -31,6 +34,7 @@
     <script type="module" src="/js/quotes.js"></script>
     <script type="module" src="/js/todo.js"></script>
     <script type="module" src="/js/greeting.js"></script>
+    <script type="module" src="/js/weather.js"></script>
     <script type="module" src="/js/background.js"></script>
   </body>
 </html>

@@ -1,63 +1,234 @@
 @import "./css-reset.scss";
 
 body {
+  position: relative;
   display: flex;
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  box-sizing: border-box;
   text-align: center;
   background-color: rgb(55, 55, 55);
-  color: rgb(255, 255, 255);
+  color: #eaeaea;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
   .hidden {
-    display: none;
+    display: none !important;
   }
   #clock {
+    position: absolute;
+    top: 100px;
     font-size: 100px;
-  }
-  #login-form {
-    height: 10%;
-    width: 70vw;
-    font-size: 40px;
-    justify-content: space-around;
-    box-sizing: border-box;
-    margin: 0 0 20px 0;
-    input:first-child {
-      width: 50%;
-      height: 40px;
-      border-radius: 30px;
-      padding: 0px 20px;
-      border: 2px solid transparent;
-    }
-    input:last-child {
-      width: 20%;
-      margin: 10px;
-      padding: 10px;
-      border: 2px solid #ffffff00;
-      border-radius: 30px;
-      color: rgb(255, 255, 255);
-      background-color: #93754d;
-    }
-  }
-  #clock {
+    font-weight: 800;
     line-height: 1.3;
   }
-  #greeting {
+  #login-form {
+    position: absolute;
+    top: 10px;
+    height: 40px;
+    right: 20px;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
     font-size: 40px;
+    #login-input {
+      width: 60%;
+      height: 19px;
+      padding: 5px;
+      border: none;
+      background-color: transparent;
+      font-size: 15px;
+      font-weight: 100px;
+      color: #bebebe;
+      border-bottom: 1px solid #bebebe;
+      &::placeholder {
+        color: #bebebe;
+      }
+      &:focus {
+        outline: none;
+        color: #eaeaea;
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+    .login-border {
+      position: inherit;
+      width: 0%;
+      display: block;
+      bottom: 4px;
+      left: 17px;
+      width: 0;
+      height: 2px;
+      background-color: #eaeaea;
+      border-radius: 2px;
+      transition: 0.5s;
+      z-index: 5;
+    }
+    #login-button {
+      width: 20%;
+      padding: 5px;
+      border: none;
+      color: #303030;
+      &:hover {
+        background-color: #ffffff;
+      }
+    }
+    input:focus ~ span,
+    input:valid ~ span {
+      width: 64%;
+      left: 17px;
+    }
+  }
+  #greeting {
+    position: absolute;
+    top: 60px;
+    font-size: 25px;
+  }
+  #todo-form {
+    position: absolute;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    top: 240px;
+    box-sizing: border-box;
+    input {
+      position: relative;
+      width: 300px;
+      padding: 0 10px 0 10px;
+      border: none;
+      border-bottom: solid #aaaaaa 1px;
+      background: none;
+      font-size: 15px;
+      font-weight: 700px;
+      color: #bebebe;
+      height: 40px;
+      z-index: 1;
+      cursor: pointer;
+      &::placeholder {
+        color: #bebebe;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    label {
+      position: absolute;
+      color: #aaa;
+      left: 10px;
+      top: 15px;
+      font-size: 20px;
+      transition: all 0.2s;
+    }
+    .underline {
+      position: absolute;
+      display: block;
+      bottom: 37.5px;
+      left: 0%;
+      // right으로 바꿔주면 오 -> 왼
+      background-color: #f6f6f6;
+      width: 0;
+      height: 2px;
+      border-radius: 2px;
+      transition: 0.5s;
+      z-index: 5;
+    }
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -14px;
+      font-size: 16px;
+      color: #f6f6f6;
+      font-weight: bold;
+    }
+    input:focus ~ span,
+    input:valid ~ span {
+      width: 100%;
+    }
+  }
+  #todo-list {
+    position: absolute;
+    top: 300px;
+    width: 90vw;
+    // padding: 20px;
+    padding-bottom: calc(55px + 90px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 0.7fr));
+    row-gap: 15px;
+    column-gap: 20px;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 300;
+    flex: 0 1 auto;
+    & li {
+      display: flex;
+      justify-content: space-between;
+      line-height: 1.8;
+      padding: 10px;
+      background-color: #eaeaea31;
+              font-weight: 600;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.2) 0 0 3px 3px;
+        outline: none;
+      }
+      & span {
+        padding: 0 15px;
+      }
+      & button {
+        position: relative;
+        display: inline-block;
+        padding: 5px 11px;
+        appearance: none;
+        background-color: rgb(55, 55, 55);
+        border: 1px solid #eaeaea;
+        border-radius: 10px;
+        box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+        box-sizing: border-box;
+        color: #eaeaea;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        white-space: nowrap;
+        &:hover {
+          background-color: rgb(112, 112, 112);
+        }
+        &:focus {
+          box-shadow: rgba(48, 48, 48, 0.2) 0 0 0 5px;
+          outline: none;
+        }
+      }
+    }
   }
   #quotes {
-    width: 60vw;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
     height: 55px;
     padding: 45px 40px;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    font-weight: 100;
-    line-height: 1.5;
+    line-height: 1.3;
+    // background-color: #eaeaea(0, 0, 0, 0.5); // 불투명한 배경색
+    backdrop-filter: blur(20px); // 블러 효과
+    color: #aaaaaa;
+    span:first-child {
+      width: 80%;
+    }
     span:last-child {
-      padding-top: 20px;
+      padding-top: 15px;
+      font-size: 13px;
     }
   }
   img {

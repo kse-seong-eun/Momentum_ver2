@@ -1,5 +1,19 @@
 # Momentum_ver.2 (REVIEW)
 
+### Todo List 페이지
+
+![Macbook-Air](https://github.com/kse-seong-eun/CSS-Layout-study/assets/66905959/4fe1347f-a41a-4188-ba39-1f13981cdfe1)
+
+---
+
+| 반응형 구현                                                                                                            |                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------: |
+| ![Macbook-Air](https://github.com/kse-seong-eun/CSS-Layout-study/assets/66905959/04ead8fe-5f0f-4fbf-8f4e-3030a8222b60) | ![Galaxy-Tab-S7](https://github.com/kse-seong-eun/CSS-Layout-study/assets/66905959/7c8bed00-0276-49bf-ad27-0f5fb86f476f) |
+
+- 새로고침 시 배경 및 명언 랜덤 출력
+- 이름 입력 시 로컬스토리에 저장
+- 화면 크기에 맞게 todolist 배열 변경
+
 # localStorage .getItem .setItem
 
 ```js
@@ -136,13 +150,13 @@ document.body.appendChild(BackGround);
 ![alt text](./img/image-2.png)
 
 # JSON.strigify JSON.parse
+
 [개념 설명 참고](https://www.daleseo.com/js-json/)
 
 - `JSON`은 JavaScript Object Notation의 약자로서 **데이터를 문자열의 형태로 나타내기 위해서 사용**됩니다.
 
 - `JSON.stringify()` 메서드는 JavaScript 값이나 객체를 JSON 문자열로 변환. 배열로 전달할 경우 지정한 속성만 결과에 포함합니다
 - **JSON 문자열을 JavaScript 객체로 변환**할 때는 `JSON 객체의 parse() 메서드`를 사용
-
 
 **✅ 인풋값을 localStorage에 배열로 저장해보자!!**
 ![alt text](./img/image6.png)
@@ -163,6 +177,7 @@ function submitTodos(event){
 
 **stringify()메서드로 입력값을 "문자열" 형태로 저장!**
 ![alt text](./img/image5.png)
+
 ```js
 const Todos = [];
 
@@ -176,8 +191,11 @@ function submitTodos(event){
   saveTodos();
 }
 ```
+
 # forEach()
+
 ![alt text](./img/image7.png)
+
 ```js
 
 function sayHello(item) {
@@ -191,7 +209,7 @@ if (savedToDos !== null) {
   parsedToDos.forEach(sayHello);
 }
 
-==> 짧은 버전의 코드 
+==> 짧은 버전의 코드
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos !== null) {
